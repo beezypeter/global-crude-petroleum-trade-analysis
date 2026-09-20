@@ -260,6 +260,7 @@ WITH country_trade AS (
         SUM(CASE WHEN `year` = 2020 THEN `Trade Value` ELSE 0 END) AS trade_2020,
         SUM(CASE WHEN `year` = 2021 THEN `Trade Value` ELSE 0 END) AS trade_2021
     FROM global_crude
+    WHERE `year` IN (2020, 2021)
     GROUP BY country
 ),
 trade_status AS (
@@ -289,6 +290,7 @@ WITH country_trade AS (
         SUM(CASE WHEN `year` = 2020 THEN `Trade Value` ELSE 0 END) AS trade_2020,
         SUM(CASE WHEN `year` = 2021 THEN `Trade Value` ELSE 0 END) AS trade_2021
     FROM global_crude
+    WHERE `year` IN (2020, 2021)
     GROUP BY continent, country
 ),
 trade_status AS (
